@@ -49,3 +49,6 @@ import { RouterView } from 'vue-router'
   <RouterView />
 </template>
 ```
+
+## 其他
+这里还有一个问题，如果不在 App.vue 中引入任何 Arco 组件，那么无论是开发还是生产环境下 `src/style.css` 和 `uno.css` 都会在 `arco.less` 前面，即样式不生效。
