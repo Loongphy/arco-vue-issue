@@ -1,23 +1,28 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+
+// TODO 如果样式没有在 import router 之下，那么在这里手动import涉及到的UI组件库，样式也会生效（因为arco-plugin是全量导入），但是build后就不会生效了
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125">
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/">
+          Home
+        </RouterLink>
+        <RouterLink to="/about">
+          About
+        </RouterLink>
       </nav>
     </div>
   </header>
 
   <RouterView />
+  <HelloWorld msg="You did it!" />
 </template>
 
 <style scoped>
