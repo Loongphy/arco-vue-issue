@@ -9,5 +9,24 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+          toggleTheme(prefersDark)
+
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            toggleTheme(e.matches);
+      });
+
+        function toggleTheme(isDarkMode) {
+            const body = document.body;
+            if (isDarkMode) {
+              document.body.setAttribute('arco-theme', 'dark')
+            } else {
+              document.body.removeAttribute('arco-theme');
+            }
+        }
+    </script>
   </body>
 </html>
